@@ -1,7 +1,7 @@
 snippet gemspec Gem::Specification.new do |gem| ... end
 	Gem::Specification.new do |gem|
 		gem.name = '${1:`substitute(Filename(), '\.gemspec$', '', '')`}'
-		gem.version = ${2:0.0.1}
+		gem.version = '${2:0.0.1}'
 		gem.date = ${3:Date.today.to_s}
 
 		gem.summary = '${4:Brief description of the gem}'
