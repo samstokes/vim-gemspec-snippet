@@ -2,16 +2,15 @@ snippet gemspec Gem::Specification.new do |gem| ... end
 	Gem::Specification.new do |gem|
 		gem.name = '${1:`substitute(Filename(), '\.gemspec$', '', '')`}'
 		gem.version = '${2:0.0.1}'
-		gem.date = ${3:Date.today.to_s}
 
-		gem.summary = '${4:Brief description of the gem}'
+		gem.summary = '${3:Brief description of the gem}'
 		gem.description = <<-DESC
-	${5:Longer description of the gem}
+	${4:Longer description of the gem}
 		DESC
 
-		gem.authors = ['${6:`system('git config --get user.name')`}']
-		gem.email = %w(${7:`system('git config --get user.email')`})
-		gem.homepage = 'http://${8:github.com/`system('git config --get github.user')`/$1}'
+		gem.authors = ['${5:`system('git config --get user.name')`}']
+		gem.email = %w(${6:`system('git config --get user.email')`})
+		gem.homepage = 'http://${7:github.com/`system('git config --get github.user')`/$1}'
 
 		gem.files = Dir[*%w(
 				lib/**/*
