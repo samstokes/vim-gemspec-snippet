@@ -1,6 +1,6 @@
 snippet gemspec Gem::Specification.new do |gem| ... end
 	Gem::Specification.new do |gem|
-		gem.name = '${1:`substitute(Filename(), '\.gemspec$', '', '')`}'
+		gem.name = '${1:`Filename('', 'my_gem')`}'
 		gem.version = '${2:0.0.1}'
 
 		gem.summary = '${3:Brief description of the gem}'
