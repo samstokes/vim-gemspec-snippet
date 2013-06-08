@@ -12,11 +12,14 @@ snippet gemspec Gem::Specification.new do |gem| ... end
 		gem.email = %w(${6:`system('git config --get user.email')`})
 		gem.homepage = 'http://${7:github.com/`system('git config --get github.user')`/$1}'
 
+		gem.executables = ['${8:$1}']
 
-		gem.add_dependency '${8:example_dependency}', '${9:~> 0.2}'
+
+		gem.add_dependency '${9:example_dependency}', '${10:~> 0.2}'
 
 
 		gem.files = Dir[*%w(
+				bin/*
 				lib/**/*
 				README*)] & %x{git ls-files -z}.split("\0")
 	end
