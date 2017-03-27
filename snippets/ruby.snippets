@@ -10,7 +10,8 @@ snippet gemspec Gem::Specification.new do |gem| ... end
 
 		gem.authors = ['${5:`system('git config --get user.name')`}']
 		gem.email = %w(${6:`system('git config --get user.email')`})
-		gem.homepage = 'http://${7:github.com/`system('git config --get github.user')`/$1}'
+		gem.homepage = 'https://${7:github.com/`system('git config --get github.user')`/$1}'
+		gem.license = 'MIT'
 
 		gem.executables = ['${8:$1}']
 
